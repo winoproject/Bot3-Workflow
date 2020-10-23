@@ -28,7 +28,7 @@ jobs:
          continue-on-error: true
          timeout-minutes: 10
          run: |
-              git clone https://github.com/Treble-Experience/ErfanGSIs-VelanGSIs ErfanGSIs
+              git clone https://${{ secrets.USERNAME }}":${{ secrets.GITTOKEN }}"@github.com/Treble-Experience/ErfanGSIs-VelanGSIs ErfanGSIs
               cd Erf*; sudo bash setup.sh
 
        - name: Setup BoboBot
