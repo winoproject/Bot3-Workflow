@@ -35,7 +35,7 @@ jobs:
          continue-on-error: true
          timeout-minutes: 10
          run: |
-              wget 'https://github.com/Kurata-Yui/Bot3/releases/download/v1.2.1-HotFix/BoboBot.jar' -O BoboBot.jar
+              wget 'https://github.com/Kurata-Yui/Bot3/releases/download/v1.2.2/BoboBot-1-all.jar' -O BoboBot.jar
 
        - name: Run Bot3 in first time
          continue-on-error: true
