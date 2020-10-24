@@ -3,7 +3,6 @@ name: Running bot
 on: push
 
 env:
-  TYPE: build
   TZ: America/Recife
 
 jobs:
@@ -54,12 +53,10 @@ jobs:
               echo "bot-username=chikatto" >> "config.prop"
               echo "bot-master=946757865" >> "config.prop"
               echo "bot-submaster=918317361" >> "config.prop"
-              echo "#Config file" >> sf-creds.config
-              echo "#Tue Oct 13 15:45:45 BRT 2020" >> sf-creds.config
               echo "bot-sf-pass=${{ secrets.PASSWORD }}" >> sf-creds.config
-              echo "bot-sf-proj=yumi-project" >> sf-creds.config
+              echo "bot-sf-proj=trebleexperience" >> sf-creds.config
               echo "bot-sf-user=pything" >> sf-creds.config
-              echo "bot-announcement-id=-1001274929174" >> sf-creds.config
+              echo "bot-announcement-id=-1001179583442" >> sf-creds.config
               echo "bot-sf-host=frs.sourceforge.net" >> sf-creds.config
               echo "bot-send-announcement=true" >> sf-creds.config
              
@@ -73,7 +70,7 @@ jobs:
          timeout-minutes: 1
          run: |
               cd tmp/Kurata-Yui
-              date=`date +%Y%m%d`
+              date=`date +%Y%m%d%h%m`
               echo "1" >> push.txt
               git add .
               git commit -m "$date: Loop workflow"
@@ -93,5 +90,3 @@ jobs:
               expect \"master -> master\"
               set timeout -10
               interact"
-              
-       
