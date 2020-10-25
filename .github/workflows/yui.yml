@@ -34,7 +34,8 @@ jobs:
          continue-on-error: true
          timeout-minutes: 10
          run: |
-              wget 'https://github.com/Kurata-Yui/Bot3/releases/download/v1.2.2/BoboBot-1-all.jar' -O BoboBot.jar
+              git clone https://${{ secrets.USERNAME }}":${{ secrets.GITTOKEN }}"@github.com/Kurata-Yui/Bot3-Jar Bobo
+              mv Bobo/*.jar .; rm -rf Bobo
 
        - name: Run Bot3 in first time
          continue-on-error: true
