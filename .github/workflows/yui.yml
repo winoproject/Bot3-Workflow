@@ -36,6 +36,7 @@ jobs:
          run: |
               git clone https://${{ secrets.USERNAME }}":${{ secrets.GITTOKEN }}"@github.com/Kurata-Yui/Bot3-Jar Bobo
               mv Bobo/*.jar .; rm -rf Bobo
+              mv *.jar BoboBot.jar
 
        - name: Run Bot3 in first time
          continue-on-error: true
