@@ -39,7 +39,7 @@ jobs:
          timeout-minutes: 10
          run: |
               git clone https://${{ secrets.USERNAME }}":${{ secrets.GITTOKEN }}"@github.com/Project-WKF/Bot3-Jar bobot
-              mv Bobo/*.jar .; rm -rf bobot
+              mv bobot/*.jar .; rm -rf bobot
               mv *.jar BoboBot.jar
 
        - name: Run Bot3 in first time
