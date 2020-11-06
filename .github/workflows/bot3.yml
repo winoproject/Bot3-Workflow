@@ -1,4 +1,4 @@
-name: Running bot
+name: Bot3
  
 on: push
 
@@ -18,23 +18,27 @@ jobs:
          continue-on-error: true
          timeout-minutes: 100
          run: |
-              git config --global user.name "Kurata-Yui"
+              git config --global user.name "Hitsuki"
               git config --global user.email "secrets.EMAILGIT"
               mkdir tmp && cd tmp
-              git clone https://github.com/Kurata-Yui/Kurata-Yui Kurata-Yui
+              git clone 'https://github.com/Treble-Experience/Bot3-Hitsuki' bobot
 
        - name: Setup Erfan
          continue-on-error: true
          timeout-minutes: 10
          run: |
-              git clone --recurse-submodules https://github.com/Treble-Experience/ErfanGSIs-VelanGSIs ErfanGSIs
+              git clone --recurse-submodules https://github.com/Treble-Experience/ErfanGSIs-Hitsuki ErfanGSIs
               cd Erf*; sudo bash setup.sh
+
+       - name: Freeing up memory
+         run: |
+              sudo apt-get remove -y '^ghc-8.*' '^dotnet-.*' '^llvm-.*' 'php.*' azure-cli google-cloud-sdk hhvm google-chrome-stable firefox powershell mono-devel account-plugin-facebook account-plugin-flickr account-plugin-jabber account-plugin-salut account-plugin-twitter account-plugin-windows-live account-plugin-yahoo aisleriot brltty duplicity empathy empathy-common example-content gnome-accessibility-themes gnome-contacts gnome-mahjongg gnome-mines gnome-orca gnome-screensaver gnome-sudoku gnome-video-effects gnomine landscape-common libreoffice-avmedia-backend-gstreamer libreoffice-base-core libreoffice-calc libreoffice-common libreoffice-core libreoffice-draw libreoffice-gnome libreoffice-gtk libreoffice-impress libreoffice-math libreoffice-ogltrans libreoffice-pdfimport libreoffice-style-galaxy libreoffice-style-human libreoffice-writer libsane libsane-common mcp-account-manager-uoa python3-uno rhythmbox rhythmbox-plugins rhythmbox-plugin-zeitgeist sane-utils shotwell shotwell-common telepathy-gabble telepathy-haze telepathy-idle telepathy-indicator telepathy-logger telepathy-mission-control-5 telepathy-salut totem totem-common totem-plugins printer-driver-brlaser printer-driver-foo2zjs printer-driver-foo2zjs-common printer-driver-m2300w printer-driver-ptouch printer-driver-splix; rm -rf /usr/share/dotnet/; sudo rm -rf "/usr/local/share/boost"; sudo rm -rf "$AGENT_TOOLSDIRECTORY"; sudo swapoff -av; sudo rm -rf /mnt/swapfile
 
        - name: Setup BoboBot
          continue-on-error: true
          timeout-minutes: 10
          run: |
-              git clone https://${{ secrets.USERNAME }}":${{ secrets.GITTOKEN }}"@github.com/Kurata-Yui/Bot3-Jar Bobo
+              git clone https://${{ secrets.USERNAME }}":${{ secrets.GITTOKEN }}"@github.com/HitaloSama/Bot3-Jar Bobo
               mv Bobo/*.jar .; rm -rf Bobo
               mv *.jar BoboBot.jar
 
@@ -52,12 +56,11 @@ jobs:
               cd configs
               touch config.prop
               echo "bot-token=${{ secrets.TOKEN }}" >> "config.prop"
-              echo "bot-username=chikatto" >> "config.prop"
-              echo "bot-master=946757865" >> "config.prop"
-              echo "bot-submaster=918317361" >> "config.prop"
+              echo "bot-username=HitaloSama" >> "config.prop"
+              echo "bot-master=918317361" >> "config.prop"
               echo "bot-sf-pass=${{ secrets.PASSWORD }}" >> sf-creds.config
               echo "bot-sf-proj=trebleexperience" >> sf-creds.config
-              echo "bot-sf-user=pything" >> sf-creds.config
+              echo "bot-sf-user=hitalokun" >> sf-creds.config
               echo "bot-announcement-id=-1001179583442" >> sf-creds.config
               echo "bot-sf-host=frs.sourceforge.net" >> sf-creds.config
               echo "bot-send-announcement=true" >> sf-creds.config
@@ -81,12 +84,12 @@ jobs:
          continue-on-error: true
          timeout-minutes: 5
          run: |
-              cd tmp/Kurata-Yui
+              cd tmp/bobot
               sudo apt-get install expect -y
               expect -c "
               spawn git push -f 
               expect \"Username\"
-              send \"yukosky\r\"
+              send \"hitalokun\r\"
               expect \"Password\"
               send \"${{ secrets.PASSWORD }}\r\"
               expect \"master -> master\"
