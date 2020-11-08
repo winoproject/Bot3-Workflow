@@ -56,12 +56,12 @@ jobs:
               cd configs
               touch config.prop
               echo "bot-token=${{ secrets.TOKEN }}" >> "config.prop"
-              echo "bot-username=HitaloSama" >> "config.prop"
-              echo "bot-master=918317361" >> "config.prop"
+              echo "bot-username=WinoBuilder" >> "config.prop"
+              echo "bot-master=1484394942" >> "config.prop"
               echo "bot-sf-pass=${{ secrets.PASSWORD }}" >> sf-creds.config
-              echo "bot-sf-proj=trebleexperience" >> sf-creds.config
-              echo "bot-sf-user=hitalokun" >> sf-creds.config
-              echo "bot-announcement-id=-1001179583442" >> sf-creds.config
+              echo "bot-sf-proj=Winogsi" >> sf-creds.config
+              echo "bot-sf-user=shinchan" >> sf-creds.config
+              echo "bot-announcement-id=-1458060386" >> sf-creds.config
               echo "bot-sf-host=frs.sourceforge.net" >> sf-creds.config
               echo "bot-send-announcement=true" >> sf-creds.config
              
@@ -89,7 +89,7 @@ jobs:
               expect -c "
               spawn git push -f 
               expect \"Username\"
-              send \"hitalokun\r\"
+              send \"WinoBuilder\r\"
               expect \"Password\"
               send \"${{ secrets.PASSWORD }}\r\"
               expect \"master -> master\"
