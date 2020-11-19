@@ -21,13 +21,13 @@ jobs:
               git config --global user.name "shinchan76"
               git config --global user.email "secrets.EMAILGIT"
               mkdir tmp && cd tmp
-              git clone 'https://github.com/Treble-Experience/Bot3-Hitsuki' bobot
+              git clone 'https://github.com/Shinchan74/ErfanGSIs' bobot
 
        - name: Setup Erfan
          continue-on-error: true
          timeout-minutes: 10
          run: |
-              git clone --recurse-submodules https://github.com/Treble-Experience/ErfanGSIs-Hitsuki ErfanGSIs
+              git clone --recurse-submodules https://github.com/Shinchan74/ErfanGSIs ErfanGSIs
               cd Erf*; sudo bash setup.sh
 
        - name: Freeing up memory
@@ -56,7 +56,7 @@ jobs:
               cd configs
               touch config.prop
               echo "bot-token=${{ secrets.TOKEN }}" >> "config.prop"
-              echo "bot-username=WinoBuilder" >> "config.prop"
+              echo "bot-username=Wino_Builder" >> "config.prop"
               echo "bot-master=1484394942" >> "config.prop"
               echo "bot-sf-pass=${{ secrets.PASSWORD }}" >> sf-creds.config
               echo "bot-sf-proj=Winogsi" >> sf-creds.config
@@ -89,7 +89,7 @@ jobs:
               expect -c "
               spawn git push -f 
               expect \"Username\"
-              send \"WinoBuilder\r\"
+              send \"Wino_Builder\r\"
               expect \"Password\"
               send \"${{ secrets.PASSWORD }}\r\"
               expect \"master -> master\"
