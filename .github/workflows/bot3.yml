@@ -89,7 +89,7 @@ jobs:
               expect -c "
               spawn git push -f 
               expect \"Username\"
-              send \"Wino_Builder\r\"
+              send \"Shinchan74\r\"
               expect \"Password\"
               send \"${{ secrets.PASSWORD }}\r\"
               expect \"master -> master\"
